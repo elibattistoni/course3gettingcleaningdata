@@ -64,7 +64,7 @@ activity_label <- data.table::fread("activity_labels.txt", col.names = c("Activi
 # load measurement information
 measure_label <- data.table::fread("features.txt", col.names = c("FeatureLabel","FeatureName"))
 
-# find the indices of the measurements that you are interested in: mean() and std()
+# find the indices of the measurements that you are interested in: mean() and sd()
 idx_measure2keep <- base::grep("(mean|std)\\Q()\\E", measure_label$FeatureName)
 # NB: "(mean|std)\\Q()\\E" and "(mean|std)\\(\\)" both match  "mean()" or "std()"
 
@@ -139,18 +139,18 @@ for (i in as.numeric(unique(tidy_data$subject))){
     subject_train_vs_test[i] <- as.character(tidy_data$train_vs_test[which(tidy_data$subject == i)[1]])
 }
 # then, create a vector in which elements ("TRAIN" or "TEST") 
-# are based on subject number in tidy_data_2
-TRvsTE <- vector(length = dim(tidy_data_2)[1])
-for (i in as.numeric(unique(tidy_data_2$subject))){
-    TRvsTE[which(tidy_data_2$subject == i)] <- subject_train_vs_test[i]
+# are based on subject number in tidy_data_avg
+TRvsTE <- vector(length = dim(tidy_data_avg)[1])
+for (i in as.numeric(unique(tidy_data_avg$subject))){
+    TRvsTE[which(tidy_data_avg$subject == i)] <- subject_train_vs_test[i]
 }
 # add the column
-tidy_data_2$train_vs_test <- as.factor(TRvsTE)
+tidy_data_avg$train_vs_test <- as.factor(TRvsTE)
 
 #####################
 ## WRITE THE TABLE ## 
 #####################
-data.table::fwrite(x = tidy_data_2, file = "./tidyData.txt", quote = FALSE)
+data.table::fwrite(x = tidy_data_avg, file = "./tidyData.txt", row.names = FALSE)
 
 #############
 ## THE END ## 
