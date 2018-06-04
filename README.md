@@ -1,4 +1,5 @@
-### Final project of the course "Getting and Cleaning Data" (Coursera, Data Science Specialization)
+### Final project of the course "Getting and Cleaning Data" 
+#### Coursera, Data Science Specialization
 
 Purpose of this project:
 
