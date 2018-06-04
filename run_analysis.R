@@ -64,7 +64,7 @@ activity_label <- data.table::fread("activity_labels.txt", col.names = c("Activi
 # load measurement information
 measure_label <- data.table::fread("features.txt", col.names = c("FeatureLabel","FeatureName"))
 
-# find the indices of the measurements that you are interested in: mean() and sd()
+# find the indices of the measurements that you are interested in: mean() and std()
 idx_measure2keep <- base::grep("(mean|std)\\Q()\\E", measure_label$FeatureName)
 # NB: "(mean|std)\\Q()\\E" and "(mean|std)\\(\\)" both match  "mean()" or "std()"
 
