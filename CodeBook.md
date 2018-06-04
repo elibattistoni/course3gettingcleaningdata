@@ -47,3 +47,32 @@ The following files are available for the train and test data. Their description
 ### Additional information:
 - Features are normalized and bounded within [-1, 1].
 - Each feature vector is a row on the text file.
+
+---
+
+# Information about the preprocessing analysis contained in the file run_analysis.R
+
+Brief summary of what the run_script.R analysis does (below there is a more detailed step-by-step list):
+- Merge the training and the test sets to create one data set;
+- Extract only the measurements on the mean and standard deviation for each measurement;
+- Use descriptive activity names to name the activities in the data set;
+- Appropriately label the data set with descriptive variable names;
+- From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+Detailed step-by-step of What the script run_analysis.R does (for even more information, see the run_analysis.R script)
+1. Check the presence of the required packages for the script
+2. Download automatically the data in your current working directory
+3. Load information related to the data set: activities and measurements (i.e. features)
+4. Find all the measurements of interest (mean and sd); tidy a bit their labels
+5. Load train and test data set, reading into R only the columns that match the measurements you're interested in; give the columns the appropriate associated name;
+6. Load information on subjects and activities, already giving the columns appropriate names
+7. Create the two complete train and test data frames
+8. Merge the train and test datasets
+9. Add a column to the merged data to know what subject is train and what subject is test
+10. The columns related to subject number, activity, train vs test are converted to factors
+11. Make the dataset tidier by melting it
+12. Order the dataset based on subject number
+13. Create a second independent dataset, based on the dataset resulting after step 12, where the dependent variable is the average of each measurement for each activity and each subject
+
+
