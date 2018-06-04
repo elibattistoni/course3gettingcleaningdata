@@ -4,7 +4,7 @@
 
 **Purpose of this project:**
 
-collect, work with, clean a data set in a way that is useful for later analysis.
+collect, work with, and clean a data set in a way that is useful for later analysis.
 
 ---
 
