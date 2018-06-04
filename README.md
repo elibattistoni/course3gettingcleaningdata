@@ -11,7 +11,8 @@ collect, work with, and clean a data set in a way that is useful for later analy
 In this repository, you will find:
 - **README.md**, explaining the files in this repository and how they are connected;
 - **CodeBook.md**, explaining the dataset and the variables, and how the raw data has been cleaned up with **run_analysis.R**;
-- **run_analysis.R**, the script for performing the "preprocessing" analysis.
+- **run_analysis.R**, the script for performing the "preprocessing" analysis;
+- **tidyData.txt**, the data frame created at the end of run_analysis.R
 
 
 Important: I suggest to go through the files in this repo according to the order listed above.
